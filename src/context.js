@@ -9,7 +9,7 @@ const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState('a')
   const [cocktails, setCocktails] = useState([])
 
-  const fetchDrinks = async () => {
+  const fetchDrinks = useCallback(async () => {
     setLoading(true)
     try {
       const response = await fetch(`${url}${searchTerm}`)
@@ -22,14 +22,14 @@ const AppProvider = ({ children }) => {
             strDrink,
             strDrinkThumb,
             strAlcoholic,
-            strGlass
+            strGlass,
           } = item
           return {
             id: idDrink,
             name: strDrink,
             image: strDrinkThumb,
             info: strAlcoholic,
-            glass: strGlass
+            glass: strGlass,
           }
         })
         setCocktails(newCocktails)
@@ -41,11 +41,11 @@ const AppProvider = ({ children }) => {
       console.log(error)
       setLoading(false)
     }
-  }
+  }, [searchTerm])
 
   useEffect(() => {
     fetchDrinks()
-  }, [searchTerm])
+  }, [fetchDrinks, searchTerm])
 
   return (
     <AppContext.Provider value={{ loading, cocktails, setSearchTerm }}>

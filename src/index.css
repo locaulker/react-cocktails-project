@@ -37,7 +37,7 @@ Global Styles
 
 body {
   font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
   color: var(--mainBlack);
   background: var(--mainBackground);
   line-height: 1.4;
@@ -53,7 +53,7 @@ h6 {
   font-family: var(--slantedFont);
   margin-bottom: 1.25rem;
   letter-spacing: var(--mainSpacing);
-  font-weight: 300;
+  /* font-weight: 300; */
 }
 p {
   margin-bottom: 1.25rem;
@@ -121,7 +121,8 @@ Buttons
   text-align: center;
 }
 .btn-details {
-  padding: 0.25rem 0.4rem;
+  padding: 0.55rem 0.5rem;
+  letter-spacing: 2px;
 }
 .btn-details:hover {
   background: var(--primaryLightColor);
@@ -207,12 +208,14 @@ Cocktails List
   padding: 5rem 0;
 }
 .section-title {
-  font-size: 2rem;
-  text-transform: capitalize;
+  font-size: 2.5rem;
+  /* text-transform: capitalize; */
   letter-spacing: var(--mainSpacing);
   text-align: center;
   margin-bottom: 3.5rem;
   margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: 300;
 }
 .cocktails-center {
   width: var(--smallWidth);
@@ -262,6 +265,7 @@ Cocktail
 }
 .cocktail-footer h3 {
   font-size: 2rem;
+  font-weight: normal;
 }
 .cocktail-footer p {
   color: var(--darkGrey);
